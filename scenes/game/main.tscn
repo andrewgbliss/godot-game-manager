@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dyo7v11egcxe0"]
+
+[ext_resource type="Script" uid="uid://cgoxdw5hudhq7" path="res://scenes/game/main.gd" id="1_llaio"]
+
+[sub_resource type="Gradient" id="Gradient_llaio"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oekm8"]
+gradient = SubResource("Gradient_llaio")
+width = 16
+
+[sub_resource type="Animation" id="Animation_llaio"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(91.00001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(58, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_oekm8"]
+resource_name = "run"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(91.00001, -0.25, 0, 0.25, 0, 231, -0.16666667, -23.333334, 0, 0, 91.00001, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 1.97)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(58, -0.25, 0, 0.25, 0, 58, -0.16666667, 0, 0, 0, 58, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 1.97)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yd8kv"]
+_data = {
+&"RESET": SubResource("Animation_llaio"),
+&"run": SubResource("Animation_oekm8")
+}
+
+[node name="Main" type="Node2D" unique_id=1118238605 node_paths=PackedStringArray("game_state_label", "pause_button")]
+script = ExtResource("1_llaio")
+game_state_label = NodePath("CanvasLayer/GameStateLabel")
+pause_button = NodePath("CanvasLayer/PauseButton")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=955255029]
+position = Vector2(91.00001, 58)
+scale = Vector2(0.914, 16)
+texture = SubResource("GradientTexture1D_oekm8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=904625409]
+libraries/ = SubResource("AnimationLibrary_yd8kv")
+autoplay = &"run"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1315778702]
+process_mode = 3
+
+[node name="GameStateLabel" type="Label" parent="CanvasLayer" unique_id=949180614]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "State"
+
+[node name="PauseButton" type="Button" parent="CanvasLayer" unique_id=2086836872]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 22.0
+offset_right = 28.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause"
