@@ -41,13 +41,13 @@ GameManager.toggle_pause()
 
 For games that need to snap to a grid in game
 
-```
+```gdscript
 var pos = GameUtils.snap_to_grid(pos)
 ```
 
 ### Transparent Window
 
-```
+```gdscript
 GameUtils.set_transparent_window()
 ```
 
@@ -67,7 +67,7 @@ GameUtils.set_transparent_window()
 
 This will set the window position to the bottom right screen
 
-```
+```gdscript
 GameUtils.set_window_position(GameUtils.get_bottom_right_position(get_window()))
 ```
 
