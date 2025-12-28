@@ -15,6 +15,7 @@ This project is the starter template for all my projects in Godot.
 ## Project Setting For 2d Pixel Art Games
 
 ```
+[display]
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/window_width_override=1280
@@ -22,6 +23,8 @@ window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+
+[rendering]
 textures/canvas_textures/default_texture_filter=0 # Nearest
 ```
 
@@ -48,20 +51,18 @@ var pos = GameUtils.snap_to_grid(pos)
 ### Transparent Window
 
 ```gdscript
+[display]
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+
+[rendering]
+viewport/transparent_background=true
+
+# Code to enable it
 GameUtils.set_transparent_window()
 ```
-
-- Open your project in Godot and go to Project > Project Settings in the top menu.
-- Click the Advanced Settings button at the top right of the Project Settings window to reveal all options.
-- In the Project Settings window, navigate to Display > Window.
-- Set Transparent to Enabled.
-- Set Borderless to Enabled.
-- Set Always on Top to Enabled.
-- Navigate to Display > Window > Per Pixel Transparency.
-- Set Allowed to Enabled.
-- Navigate to Rendering > Viewport.
-- Set Transparent Background to Enabled.
-- (Optional) Set a fixed size for your game window under Display > Window > Size by adjusting the Width and Height.
 
 ### Setting Window Position
 
