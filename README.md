@@ -12,7 +12,9 @@ This project is the starter template for all my projects in Godot.
 │   └── game      # The local game files only used for this game
 ```
 
-## Project Setting For 2d Pixel Art Games
+## Project Settings
+
+These are project settings for 2d pixel art games
 
 ```
 [display]
