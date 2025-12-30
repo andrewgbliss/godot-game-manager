@@ -30,7 +30,7 @@ window/stretch/scale_mode="integer"
 textures/canvas_textures/default_texture_filter=0 # Nearest
 ```
 
-## Autload Usage
+## Autoload Usage
 
 ```gdscript
 # Setting the game state
