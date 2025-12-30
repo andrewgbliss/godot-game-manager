@@ -7,7 +7,7 @@ This project is the starter template for all my projects in Godot.
 ```
 /
 ├── scenes/
-│   └── core      # Used acrossed all projects
+│   └── core      # Core game files
 │       └── game  # Game manager autoload
 │   └── game      # The local game files only used for this game
 ```
