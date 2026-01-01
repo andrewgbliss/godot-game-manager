@@ -1,4 +1,4 @@
-class_name GameManager extends Node
+extends Node
 
 enum GAME_STATE {
 	NONE,

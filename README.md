@@ -1,7 +1,5 @@
 # Godot Game Manager
 
-This project is the starter template for all my projects in Godot.
-
 ## 📁 Project Structure
 
 ```

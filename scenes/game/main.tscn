@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dyo7v11egcxe0"]
 
 [ext_resource type="Script" uid="uid://cgoxdw5hudhq7" path="res://scenes/game/main.gd" id="1_llaio"]
-[ext_resource type="Script" uid="uid://dicc174tepd4p" path="res://scenes/core/game/game_manager.gd" id="2_oekm8"]
 
 [sub_resource type="Gradient" id="Gradient_llaio"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -70,14 +69,10 @@ _data = {
 
 [node name="Main" type="Node2D" unique_id=1118238605 node_paths=PackedStringArray("game_manager", "game_state_label", "pause_button", "quit_button")]
 script = ExtResource("1_llaio")
-game_manager = NodePath("GameManager")
+game_manager = NodePath("")
 game_state_label = NodePath("CanvasLayer/GameStateLabel")
 pause_button = NodePath("CanvasLayer/PauseButton")
 quit_button = NodePath("CanvasLayer/QuitButton")
-
-[node name="GameManager" type="Node" parent="." unique_id=814694169]
-script = ExtResource("2_oekm8")
-metadata/_custom_type_script = "uid://dicc174tepd4p"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=955255029]
 position = Vector2(91.00001, 58)

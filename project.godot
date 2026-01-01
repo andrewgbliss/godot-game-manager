@@ -14,6 +14,10 @@ config/name="GameManager"
 run/main_scene="uid://dyo7v11egcxe0"
 config/features=PackedStringArray("4.6", "Mobile")
 
+[autoload]
+
+GameManager="*uid://dicc174tepd4p"
+
 [display]
 
 window/size/viewport_width=320
