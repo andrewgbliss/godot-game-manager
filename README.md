@@ -30,17 +30,22 @@ window/stretch/scale_mode="integer"
 textures/canvas_textures/default_texture_filter=0 # Nearest
 ```
 
-## Autoload Usage
+## Usage
 
 ```gdscript
+
+@export var game_manager: GameManager
+
 # Setting the game state
-GameManager.set_state(GameManager.GAME_STATE.GAME_INIT)
+game_manager.set_state(GameManager.GAME_STATE.GAME_INIT)
 
 # Pause the game
-GameManager.toggle_pause()
+game_manager.toggle_pause()
 ```
 
 ## GameUtils Uages
+
+Game utils is a static class you can use anywhere.
 
 ### Snap to grid
 

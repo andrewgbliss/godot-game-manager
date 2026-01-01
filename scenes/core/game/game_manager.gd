@@ -1,4 +1,4 @@
-extends Node
+class_name GameManager extends Node
 
 enum GAME_STATE {
 	NONE,
@@ -13,7 +13,8 @@ enum GAME_STATE {
 	GAME_RESTORE,
 	GAME_PAUSED,
 	GAME_OVER,
-	GAME_VICTORY
+	GAME_VICTORY,
+	GAME_QUIT
 }
 
 var game_state: GAME_STATE = GAME_STATE.NONE
@@ -70,7 +71,7 @@ func unpause():
 	is_paused = false
 	get_tree().paused = is_paused
 	set_state(previous_game_state)
-	paused_toggled.emit(is_paused)
+	paused_toggled.emit(false)
 	
 func toggle_pause():
 	if is_paused:
@@ -80,3 +81,7 @@ func toggle_pause():
 
 func reset_scene():
 	get_tree().reload_current_scene()
+	
+func quit():
+	set_state(GAME_STATE.GAME_QUIT)
+	get_tree().quit()
